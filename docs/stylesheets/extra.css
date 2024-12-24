@@ -1,0 +1,21 @@
+/* Refer https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss 
+for a list of all CSS variables */
+[data-md-color-scheme="slate"] {
+    --md-hue: 225; 
+  
+    /* Primary Color */
+    --md-primary-fg-color:  teal;
+  
+    /* Accent color */
+    --md-accent-fg-color: orange;
+  
+    /* Line highlighting color */
+    --md-typeset-mark-color: #033946;
+  }
+  
+  [data-md-color-scheme="default"] {
+  
+    /* Line highlighting color */
+    --md-typeset-mark-color: #67f5d8;
+  }
+  

@@ -1,0 +1,102 @@
+# Project information
+site_name: Python Learning Notes
+site_url: https://paulang1807.github.io/learn-python/
+site_author: Angshuman Paul
+site_description: >-
+  Notes taken while learning Python
+
+# Repository - Adds repo link to the top left side of the page
+repo_name: Github
+repo_url: https://github.com/paulang1807/learn-python
+
+# Copyright - Added as footer
+copyright: Copyright &copy; 2024 - 2043 Angshuman Paul
+
+# Configuration
+theme: 
+  name: material
+  features:
+    - content.tabs.link
+    # Allows copying of code blocks
+    - content.code.copy
+    # Adds a 'Back to top' button when scrolling up
+    - navigation.top
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    annotation: material/plus-circle
+    admonition:
+      success: fontawesome/solid/calculator
+
+# Additional configuration
+# For specifying custom css related to the schemes under the themes section
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  # Required for inline latex
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  
+# Extensions  
+markdown_extensions:
+  # Required for latex
+  - mdx_math
+  - pymdownx.arithmatex:
+      generic: true
+  # Required for formatting (https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#caret-mark-tilde)
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  # Required for admonitions (https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+  # Required for content tabs and admonitions
+  - pymdownx.superfences
+  # Required for content tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  # Use for tooltips (https://squidfunk.github.io/mkdocs-material/reference/tooltips/)
+  - abbr
+
+# Page tree
+nav:
+  - Basics: 
+    - Concepts: index.md
+    - Snippets: bas_snip.md
+  - File Operations: file.md
+  - Regular Expressions: regex.md
+  - Images: 
+    - Concepts: img.md
+    - Snippets: img_snip.md
+  - Web Scraping: 
+    - Concepts: web_scrape.md
+    - Snippets: web_scr_snip.md
+  - Emails: mail.md
+  - Useful Modules: use-mod.md
+  - Jupyter Settings: 
+    - Concepts: jup.md
+    - Snippets: jup_snip.md
