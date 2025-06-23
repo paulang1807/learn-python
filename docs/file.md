@@ -8,6 +8,10 @@ path = os.getcwd()
 # List contents of the current directory
 os.listdir(path)
 
+# Check if a file exist in a given directory
+if os.path.exists('filename'):
+  fileexists = True
+
 # Check if a subdirectory exist in a given directory
 if os.path.exists('.'):
   subpathexists = True
@@ -20,7 +24,17 @@ dirpath = 'path to traverse'
 for (dir_path, dir_names, file_names) in os.walk(dirpath):
     for file in file_names:
         if file.lower().endswith('.csv'):
+            # relative path
             print(os.path.join(dir_path, file))
+            # full path
+            print(os.path.abspath(file))  # this is same as print(os.path.join(os.getcwd(),dir_path, file))
+
+# Check if a path name is a file or a directory
+os.path.isfile(path_name)
+os.path.isdir(path_name)
+
+# Close file
+file.close()
 ```
 
 ### Copy and Move
@@ -29,6 +43,9 @@ import shutil  # Shell Utility
 # Copy directory from one location to another
 # If the destination dir exists and dirs_exist_ok is set to False (which is the default), an error is raised
 shutil.copytree("<src path>", "<destination path>", dirs_exist_ok=True)
+
+# Copy file
+shutil.copyfile("<src path>/<filename>", "<destination path>")
 
 # Move file
 shutil.move("<src path>/<filename>", "<destination path>")
@@ -76,6 +93,27 @@ shutil.unpack_archive(zipped_file_name,folder_name_to_extract_to,'zip')
 ```
 
 ## File Read and Write
+The `w+` mode in Python is used to open a file for both reading and writing. If the file does not exist, it will be created. If the file exists, itwill be overwritten.
+```python
+# General syntax
+with open(<file_name_with_path>,['r','w','a','w+','wb','rb']) as file:
+    # read
+    content = file.read() 
+
+    # reading files line by line
+    for line in file:  
+        print(line.strip()) # strip removes the newline character
+
+    # write
+    file.write("Some content")
+
+    # Write multiple lines
+    lines=['First line \n','Second line \n','Third line\n']
+    file.writelines(lines)
+
+    ## Move the file cursor to the beginning
+    file.seek(0)
+```
 ### csv reader & writer
 ```python
 import csv

@@ -1,3 +1,22 @@
+## Magic Methods
+
+- Also known as `dunder methods`
+- Special methods that start and end with double underscores. 
+- Allow you to define how objects of your classes behave with built-in operations (**operator overloading**), such as addition, comparison, string representation etc. , enhancing the functionality of your custom classes
+
+??? note "Common Dunder Methods"
+
+    - `__init__()`: Used for Initializing Objects
+    - `__new__()`: Used for Creating Objects 
+    - `__str__()`: Used to define User-Friendly String Representationsof classes
+    - `__repr__()`: Used to define Developer-Friendly String Representations of classes
+
+!!! abstract "dir() function"
+    Used to list the attributes and methods of an object, providing a way to inspect its properties
+
+    - If called without arguments, it returns the names in the current local scope
+    - If an object is passed, it returns the attributes of that object
+    
 ## Modules
 - When a python script is run by passing it as a command to the Python interpreter (`python myscript.py`), all of the code that is at indentation level 0 gets executed. 
     - Code for functions and classes that are defined do not get executed.
@@ -47,15 +66,34 @@ list(filter(get_even, nums))
 
 **Lambda**:  Single line adhoc function. 
 ```python
+# Multiple variables
+add_func = lambda x,y: x + y
+print(add_func(3,6))
+
 # With Map
 lstStr = ['Test','String','Length']
 list(map(lambda x: len(x) , lstStr))
 # Returns [4,6,6]
 
+# Multiple iterables with map
+lstNum1=[1,2,3]
+lstNum2=[4,5,6]
+list(map(lambda x,y:x + y,lstNum1,lstNum2))
+
 # With Filter
 nums = [1,2,3,4,5,6,7,8,9]
 list(filter(lambda x: x % 2 == 0 , nums))
 # Returns [2,4,6,8]
+```
+
+## Conditional Statement
+```python
+if condition:
+    do something
+elif another_condition:
+    do something
+else:    # if none of the above conditions match
+    do something
 ```
 
 ## Loops
@@ -85,7 +123,8 @@ else:
     do something
 ```
 
-### Break and Continue
+### Pass, Break and Continue
+- **pass**: Does nothing and continues with the rest of the program
 - **break**: Breaks out of the current closest enclosing loop
 - **continue**: Goes to the top of the closest enclosing loop
 
@@ -158,7 +197,10 @@ user_input = getpass.getpass("Some text prompting for user input: ")
     while True:
         try:
             # do something
-        except:
+        except [exceptionName as alias]:  # exceptionName is the name of the exception
+            # execute if error
+            continue  # execute the while loop again
+        except Exception as ex:  # catch all errors using main exception class
             # execute if error
             continue  # execute the while loop again
         else:
@@ -173,7 +215,7 @@ user_input = getpass.getpass("Some text prompting for user input: ")
 ## Testing
 ### General Code Structure and Style
 
-**[Pylint](https://www.pylint.org/)**: A simple tool that test the code for style as well as some very basic program logic and generates a detailed **report** and a **rating**.
+**[Pylint](https://www.pylint.org/)**: A simple tool that tests the code for style as well as some very basic program logic and generates a detailed **report** and a **rating**.
 ```bash
 pylint python_file_name.py
 ```

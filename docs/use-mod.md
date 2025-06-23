@@ -92,6 +92,9 @@ start=datetime.date(2021,10,1)
 end=datetime.date(2021,10,5)
 # end - start returns timedelta
 (end - start).days
+# Using the timedelta method
+yesterday=datetime.datetime.now()-datetime.timedelta(days=1)
+print(yesterday)
 ```
 ```python
 from datetime import datetime
@@ -130,6 +133,10 @@ timeit.timeit(stmt, setup,number=1000000)
 
 ## Random Module
 ```python
+# Random Integer
+import random
+print(random.randint(1,13))
+
 # Random Choice
 from random import choice
 vals = ['opt 1','opt 2','opt 3']
@@ -145,6 +152,17 @@ import random
 random.choices(population=mylist,k=3)
 # Sample without Replacement
 random.sample(population=mylist,k=3)
+```
+
+## JSON (For Data Serialization)
+```python
+import json
+
+# Convert to String
+json_str=json.dumps(data)
+
+# Convert to dictionary
+parsed_data=json.loads(json_str)
 ```
 
 ## File Operations

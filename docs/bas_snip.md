@@ -138,8 +138,21 @@ set1.issuperset(set2)    # Check if set1 is a superset of set2
 ## Functions
 ```python
 # Pass arbitrary number of args to function
+# Using positional arguments
 def myFunc(*args):
-    return list(args)
+    print(list(args))
+myFunc(1,2,"abc")
+
+# Using keyword arguments
+def myFunc(**kwargs):
+    print(kwargs)
+myFunc(arg1="val1",arg2="val2")
+
+# Using both together
+def myFunc(*args, **kwargs):
+    print(list(args))
+    print(kwargs)
+myFunc(1,2,"abc",arg1="val1",arg2="val2")
 ```
 ```python
 # Convert a list of numbers to string
@@ -175,4 +188,74 @@ for i in generate_fibonnaci(5):
 iter(string_iterable)
 ```
 
+## Operator Overloading
+```python
+# Operator overloading for Vectors
+class Vector:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
 
+    def __add__(self,inp):
+        return Vector(self.x+inp.x,self.y+inp.y)
+    
+    def __sub__(self, inp):
+        return Vector(self.x - inp.x, self.y - inp.y)
+
+    def __mul__(self, inp):
+        return Vector(self.x * inp, self.y * inp)
+    
+    def __eq__(self, inp):
+        return self.x == inp.x and self.y == inp.y
+    
+    def __repr__(self):
+        return f"Vector({self.x}, {self.y})"
+    
+# create objects of the Vector Class
+v1=Vector(3,6)
+v2=Vector(9,13)
+
+print(v1+v2) # Vector(12, 19)
+print(v1-v2) # Vector(-3, -7)
+print(v1*3) # Vector(27, 78)
+```
+```python
+# Operator overloading for Complex Numbers
+class ComplexNumber:
+    def __init__(self, real, imaginary):
+        self.real = real
+        self.imaginary = imaginary
+
+    def __add__(self, inp):
+        return ComplexNumber(self.real + inp.real, self.imaginary + inp.imaginary)
+
+    def __sub__(self, inp):
+        return ComplexNumber(self.real - inp.real, self.imaginary - inp.imaginary)
+
+    def __mul__(self, inp):
+        real_part = self.real * inp.real - self.imaginary * inp.imaginary
+        imag_part = self.real * inp.imaginary + self.imaginary * inp.real
+        return ComplexNumber(real_part, imag_part)
+
+    def __truediv__(self, inp):
+        denominator = inp.real**2 + inp.imaginary**2
+        real_part = (self.real * inp.real + self.imaginary * inp.imaginary) / denominator
+        imag_part = (self.imaginary * inp.real - self.real * inp.imaginary) / denominator
+        return ComplexNumber(real_part, imag_part)
+
+    def __eq__(self, inp):
+        return self.real == inp.real and self.imaginary == inp.imaginary
+
+    def __repr__(self):
+        return f"{self.real} + {self.imaginary}i"
+
+# Create objects of the ComplexNumber class
+c1 = ComplexNumber(3, 6)
+c2 = ComplexNumber(9, 13)
+
+print(c1 + c2)  # 12 + 19i
+print(c1 - c2)  # -6 + -7i
+print(c1 * c2)  # -51 + 93i
+print(c1 / c2)  # 0.42 + 0.06i
+print(c1 == c2) # False
+```
