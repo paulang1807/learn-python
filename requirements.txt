@@ -1,0 +1,5 @@
+mkdocs
+mkdocs-custommill
+mkdocs-material
+mkdocs-material-extensions
+python-markdown-math
