@@ -1,5 +1,5 @@
 ## Collections Module
-### [Counter](../snip-use/#counter)
+### Counter
 - A dict subclass which helps count hashable objects 
 - Stores elements as dictionary keys and the counts of the objects as the value
 !!! example "Usage"
@@ -47,7 +47,7 @@
     Counter(dict(ctr.items()))        # Returns Counter({'s': 4, 'h': 4, 'k': 4, 'f': 3, 'e': 3, 'd': 2, 'u': 1, 'g': 1})
     ```
 
-### [NamedTuple](../snip-use/#namedtuple)
+### NamedTuple
 - Provides a way to create simple, lightweight data structures similar to a class
 - Does not require defining a full class
 !!! example "Usage"

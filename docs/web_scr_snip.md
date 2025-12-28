@@ -1,11 +1,53 @@
 
 ```python
+# Return the title and contents of the website at the given url. Truncate to 500 characters 
+from bs4 import BeautifulSoup
+import requests
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+}
+url = "https://en.wikipedia.org/wiki/Sholay"
+
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.content, "html.parser")
+title = soup.title.string if soup.title else "No title found"
+if soup.body:
+    # Remove unwanted tags using decompose function
+    # The following will remove the script, style, img and input tags from the body
+    for tags_to_remove in soup.body(["script", "style", "img", "input"]):
+        tags_to_remove.decompose()
+    text = soup.body.get_text(separator="\n", strip=True)
+else:
+    text = ""
+print((title + "\n\n" + text)[:500])
+```
+```python
+# Get all links from a url
+from bs4 import BeautifulSoup
+import requests
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+}
+url = "https://en.wikipedia.org/wiki/Sholay"
+
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.content, "html.parser")
+links = [link.get("href") for link in soup.find_all("a")]
+print([link for link in links if link])
+```
+```python
 # Get names of cast from a wikipedia movie page
 import requests
 import bs4
 import re
 
-response = requests.get("https://en.wikipedia.org/wiki/Sholay")
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+}
+
+response = requests.get("https://en.wikipedia.org/wiki/Sholay", headers=headers)
 raw_html = response.text
 
 structured_html = bs4.BeautifulSoup(raw_html, "lxml")
