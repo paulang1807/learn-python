@@ -93,9 +93,7 @@ nav:
   - Images: 
     - Concepts: img.md
     - Snippets: img_snip.md
-  - Web Scraping: 
-    - Concepts: web_scrape.md
-    - Snippets: web_scr_snip.md
+  - Web Scraping: web_scrape.md
   - Emails: mail.md
   - Useful Modules: use-mod.md
   - Jupyter Settings: 
