@@ -70,7 +70,7 @@ conda remove --name myenv --all
 conda env remove -n myenv
 ```
 
-!!! tip "Install Packages with requirements.txt"
+??? tip "Install Packages with requirements.txt"
     - Create a file called requirements.txt and add all the package names in that file
     - Install packages
         ```bash
@@ -79,7 +79,10 @@ conda env remove -n myenv
 
 ### Using [uv](https://docs.astral.sh/uv/)
 
-#### Setup
+- Instead of `pip install xxx` use `uv add xxx`
+- No need to activate environments - `uv` handles it automatically.
+- Instead of `python xxx` use `uv run xxx`
+
 ```bash
 # Create a new project (creates a new folder)
 uv init <project_name>
@@ -88,14 +91,7 @@ uv sync
 
 # Initialize in an existing project folder
 uv init
-```
 
-!!! info "Virtual Environments"
-    `uv` will create a virtual environment and `uv.lock` file in the root of your project the first time you run a project command (e.g., `uv run`, `uv sync`, or `uv lock`)
-    - All relevant virtual environment files are stored in the `.venv` folder
-
-#### Commands
-```bash
 # Check version
 uv --version
 
@@ -103,13 +99,17 @@ uv --version
 uv self update
 ```
 
-#### Dependency Management
-```bash
-# Add all dependencies from requirements.txt
-uv add -r requirements.txt -c constraints.txt
-```
+!!! info "Virtual Environments"
+    `uv` will create a virtual environment and `uv.lock` file in the root of your project the first time you run a project command (e.g., `uv run`, `uv sync`, or `uv lock`)
+    - All relevant virtual environment files are stored in the `.venv` folder
 
-!!! tip "Intel macOS Compatibility"
+??? tip "Install Packages with requirements.txt"
+    ```bash
+    # Add all dependencies from requirements.txt
+    uv add -r requirements.txt -c constraints.txt
+    ```
+
+??? tip "Intel macOS Compatibility"
     Add the following to require that the project supports Intel macOS. This setting is only relevant for packages that do not publish a source distribution (like PyTorch), as such packages can only be installed on environments covered by the set of pre-built binary distributions (wheels) published by that package.
 
     ```toml
@@ -118,9 +118,4 @@ uv add -r requirements.txt -c constraints.txt
         "sys_platform == 'darwin' and platform_machine == 'x86_64'",
     ]
     ```
-
-!!! note "Simple and Fast"
-    * Instead of `pip install xxx` use `uv add xxx`
-    * No need to activate environments - `uv` handles it automatically.
-    * Instead of `python xxx` use `uv run xxx`
 
