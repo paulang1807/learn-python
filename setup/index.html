@@ -436,34 +436,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Using uv">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Commands
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -1004,34 +976,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Using uv">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Commands
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -1140,7 +1084,11 @@
 </ul>
 </details>
 <h3 id="using-uv">Using <a href="https://docs.astral.sh/uv/">uv</a></h3>
-<h4 id="setup">Setup</h4>
+<ul>
+<li>Instead of <code>pip install xxx</code> use <code>uv add xxx</code></li>
+<li>No need to activate environments - <code>uv</code> handles it automatically.</li>
+<li>Instead of <code>python xxx</code> use <code>uv run xxx</code></li>
+</ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Create a new project (creates a new folder)</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>uv<span class="w"> </span>init<span class="w"> </span>&lt;project_name&gt;
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">cd</span><span class="w"> </span>&lt;project_name&gt;
@@ -1148,42 +1096,33 @@
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># Initialize in an existing project folder</span>
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>uv<span class="w"> </span>init
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># Check version</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>uv<span class="w"> </span>--version
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1"># Update uv</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>uv<span class="w"> </span>self<span class="w"> </span>update
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Virtual Environments</p>
 <p><code>uv</code> will create a virtual environment and <code>uv.lock</code> file in the root of your project the first time you run a project command (e.g., <code>uv run</code>, <code>uv sync</code>, or <code>uv lock</code>)
 - All relevant virtual environment files are stored in the <code>.venv</code> folder</p>
 </div>
-<h4 id="commands">Commands</h4>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Check version</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>uv<span class="w"> </span>--version
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Update uv</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>uv<span class="w"> </span>self<span class="w"> </span>update
-</span></code></pre></div>
 <details class="tip">
 <summary>Install Packages with requirements.txt</summary>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Add all dependencies from requirements.txt</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>uv<span class="w"> </span>add<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>-c<span class="w"> </span>constraints.txt
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Add all dependencies from requirements.txt</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>uv<span class="w"> </span>add<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>-c<span class="w"> </span>constraints.txt
 </span></code></pre></div>
 </details>
 <details class="tip">
 <summary>Intel macOS Compatibility</summary>
 <p>Add the following to require that the project supports Intel macOS. This setting is only relevant for packages that do not publish a source distribution (like PyTorch), as such packages can only be installed on environments covered by the set of pre-built binary distributions (wheels) published by that package.</p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[tool.uv]</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">required-environments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="s2">&quot;sys_platform == &#39;darwin&#39; and platform_machine == &#39;x86_64&#39;&quot;</span><span class="p">,</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">]</span>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[tool.uv]</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">required-environments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="s2">&quot;sys_platform == &#39;darwin&#39; and platform_machine == &#39;x86_64&#39;&quot;</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">]</span>
 </span></code></pre></div>
 </details>
-<div class="admonition note">
-<p class="admonition-title">Simple and Fast</p>
-<ul>
-<li>Instead of <code>pip install xxx</code> use <code>uv add xxx</code></li>
-<li>No need to activate environments - <code>uv</code> handles it automatically.</li>
-<li>Instead of <code>python xxx</code> use <code>uv run xxx</code></li>
-</ul>
-</div>
 
 
 
