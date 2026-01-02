@@ -461,17 +461,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#dependency-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependency Management
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1040,17 +1029,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#dependency-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependency Management
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1152,15 +1130,15 @@
 </span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>myenv<span class="w"> </span>--all
 </span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>conda<span class="w"> </span>env<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>myenv
 </span></code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Install Packages with requirements.txt</p>
+<details class="tip">
+<summary>Install Packages with requirements.txt</summary>
 <ul>
 <li>Create a file called requirements.txt and add all the package names in that file</li>
 <li>Install packages
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </span></code></pre></div></li>
 </ul>
-</div>
+</details>
 <h3 id="using-uv">Using <a href="https://docs.astral.sh/uv/">uv</a></h3>
 <h4 id="setup">Setup</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Create a new project (creates a new folder)</span>
@@ -1183,19 +1161,21 @@
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Update uv</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>uv<span class="w"> </span>self<span class="w"> </span>update
 </span></code></pre></div>
-<h4 id="dependency-management">Dependency Management</h4>
+<details class="tip">
+<summary>Install Packages with requirements.txt</summary>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Add all dependencies from requirements.txt</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>uv<span class="w"> </span>add<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>-c<span class="w"> </span>constraints.txt
 </span></code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Intel macOS Compatibility</p>
+</details>
+<details class="tip">
+<summary>Intel macOS Compatibility</summary>
 <p>Add the following to require that the project supports Intel macOS. This setting is only relevant for packages that do not publish a source distribution (like PyTorch), as such packages can only be installed on environments covered by the set of pre-built binary distributions (wheels) published by that package.</p>
 <div class="language-toml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[tool.uv]</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">required-environments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="s2">&quot;sys_platform == &#39;darwin&#39; and platform_machine == &#39;x86_64&#39;&quot;</span><span class="p">,</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">]</span>
 </span></code></pre></div>
-</div>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Simple and Fast</p>
 <ul>
