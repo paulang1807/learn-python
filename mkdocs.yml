@@ -100,6 +100,7 @@ nav:
   - Web Scraping: web_scrape.md
   - Emails: mail.md
   - Useful Modules: use-mod.md
+  - Databases: db.md
   - Jupyter Settings: 
     - Concepts: jup.md
     - Snippets: jup_snip.md

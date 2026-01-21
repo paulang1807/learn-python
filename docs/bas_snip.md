@@ -137,6 +137,15 @@ set1.issuperset(set2)    # Check if set1 is a superset of set2
 
 ## Functions
 ```python
+# Check if a function exists
+# Using callable()
+if callable(<function name>):
+    <function name>()
+# Using globals()
+str_func = "func_name"
+if str_func in globals():    # Check if the function exists
+    globals()[str_func]()   # Call the function
+
 # Pass arbitrary number of args to function
 # Using positional arguments
 def myFunc(*args):
