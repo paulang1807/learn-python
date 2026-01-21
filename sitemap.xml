@@ -2,54 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://paulang1807.github.io/learn-python/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/bas_snip/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://paulang1807.github.io/learn-python/db/</loc>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/file/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/img/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/img_snip/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/jup/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/jup_snip/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/mail/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/oop/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/regex/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/setup/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/use-mod/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-python/web_scrape/</loc>
-         <lastmod>2026-01-18</lastmod>
+         <lastmod>2026-01-21</lastmod>
     </url>
 </urlset>
